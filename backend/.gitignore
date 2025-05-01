@@ -1,0 +1,18 @@
+# Maven
+target/
+
+# Gradle (if using Gradle instead of Maven)
+.gradle/
+build/
+
+# Logs and temp
+*.log
+*.tmp
+
+# IntelliJ project files
+*.iml
+.idea/
+
+# Environment files
+.env
+application-local.properties
