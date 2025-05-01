@@ -3,7 +3,7 @@
 A React + Java full-stack project to collect and store friend hangout preferences.
 
 ## ✅ Phase 1: Planning & Setup
-- [ ] Define form questions and data types
+- [x] Define form questions and data types
 - [x] Create `hangout-planner/` project folder
 - [x] Set up Git repo and `.gitignore`
 - [x] (Optional) Choose license (MIT recommended)
