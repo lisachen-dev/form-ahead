@@ -6,7 +6,7 @@ This is the React frontend for the HangOut Planner app. It allows users to submi
 
 - [Vite](https://vitejs.dev/) – Fast frontend tooling
 - [React](https://react.dev/) – UI framework
-- [Tailwind CSS](https://tailwindcss.com/) – Utility-first CSS for styling
+- [Tailwind CSS](https://tailwindcss.com/docs/installation/using-vite) – Utility-first CSS for styling
 - (Planned) Axios or Fetch – for backend API integration
 
 ## ✨ Features
