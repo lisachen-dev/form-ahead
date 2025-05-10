@@ -2,4 +2,7 @@
 
 @theme {
   --color-mint-500: oklch(0.72 0.11 178);
+  --font-poppins: Poppins, sans-serif;
+  --breakpoint-3xl: 120rem;
+  --font-script: Great Vibes, cursive;
 }
