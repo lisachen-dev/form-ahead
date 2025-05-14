@@ -3,6 +3,10 @@ import './App.css';
 
 
 function App() {
+    data = [
+        {"name":"Lisa"},
+        {                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             }
+    }
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
 
