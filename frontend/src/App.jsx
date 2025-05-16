@@ -8,6 +8,10 @@ function App() {
     const [email, setEmail] = useState('');
     const [guestCount, setGuestCount] = useState(1);
     const [allergies, setAllergies] = useState('');
+    const [paymentMethod, setPaymentMethod] = useState('');
+    const [availableDays, setAvailableDays] = useState([]);
+
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -15,14 +19,19 @@ function App() {
         console.log("Name: ", name);
         console.log("Phone: ", phone)
         console.log("Email: ", email);
-        console.log("guestCount: ", guestCount);
-        console.log("allergies: ", allergies);
+        console.log("GuestCount: ", guestCount);
+        console.log("Allergies: ", allergies);
+        console.log("Payment Method: ", paymentMethod);
+        console.log("Available Days: ", availableDays);
     }
+
+
 
     return (
         <div>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="name">
+                    Name:
                     <input
                         required
                         id="name"
@@ -32,6 +41,7 @@ function App() {
                         placeholder="Jane Doe"/>
                 </label>
                 <label htmlFor="phone">
+                    Phone Number:
                     <input
                         id="phone"
                         type="tel"
@@ -43,6 +53,7 @@ function App() {
                         placeholder="e.g., 123-123-1234" />
                 </label>
                  <label htmlFor="email">
+                     Email:
                     <input
                         id="email"
                         type="email"
@@ -51,13 +62,16 @@ function App() {
                         placeholder="iAmAUsername@email.com"/>
                  </label>
                  <label htmlFor="guestCount">
+                     Including yourself, how many people are you responding for?
                     <input
                         id="guestCount"
                         type="number"
                         value={guestCount}
                         onChange={(e) => setGuestCount(Number(e.target.value))} />
+                    <small>Note: This helps us avoid double-counting. You can also send this link to others if they want to submit their own response.</small>
                  </label>
                  <label htmlFor="allergies">
+                     Please note any allergies or dietary restrictions we should know about.
                     <textarea
                         id="allergies"
                         value={allergies}
@@ -67,6 +81,22 @@ function App() {
                         placeholder="e.g. pineapple, gluten, dairy..."
                         />
                  </label>
+                 <label htmlFor="paymentMethod">
+                     If we’re sharing food or drinks, how do you prefer to handle the cost?
+                     <select
+                        id="paymentMethod"
+                        value={paymentMethod}
+                        onChange = {(e) => setPaymentMethod(e.target.value)}
+                     >
+                        <option value="">-- Select --</option>
+                        <option value="split">Split the check evenly</option>
+                        <option value="self">Pay only for what I ordered</option>
+                        <option value="ambivalent">I'm flexible / I don't care</option>
+                     </select >
+                 </label>
+
+
+
 
                 <button type="submit">Submit</button>
             </form>
