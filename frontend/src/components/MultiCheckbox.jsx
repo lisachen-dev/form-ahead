@@ -1,8 +1,6 @@
 import React, { useState } from 'react':
 
-function MultiCheckbox( {options} ) {
-    const [checkedItems, setCheckedItems] = useState([]);
-
+function MultiCheckbox({ options, checkedItems, setCheckedItems }){
 
     const handleCheckbox = (event) => {
         const value = event.target.value;
