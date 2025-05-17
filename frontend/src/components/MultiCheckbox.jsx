@@ -1,6 +1,6 @@
-import React, { useState } from 'react':
+import React, { useState } from 'react';
 
-function MultiCheckbox({ options, checkedItems, setCheckedItems }){
+export default function MultiCheckbox({ options, checkedItems, setCheckedItems }){
 
     const handleCheckbox = (event) => {
         const value = event.target.value;

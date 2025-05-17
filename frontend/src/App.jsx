@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './App.css';
+import { MultiCheckBox } from './components'
 
 
 function App() {
@@ -11,9 +12,20 @@ function App() {
     const [paymentMethod, setPaymentMethod] = useState('');
     const [availableDays, setAvailableDays] = useState([]);
 
-    options={
-
-    }
+    const options=[
+        {
+            label: "Friday May 16",
+            value: "option1"
+        },
+        {
+            label: "Saturday May 17",
+            value: "option2"
+        },
+        {
+            label: "Sunday May 18",
+            value: "option3"
+        }
+    ]
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -26,8 +38,6 @@ function App() {
         console.log("Payment Method: ", paymentMethod);
         console.log("Available Days: ", availableDays);
     }
-
-
 
     return (
         <div>
@@ -42,6 +52,7 @@ function App() {
                         onChange={(e) => setName(e.target.value)}
                         placeholder="Jane Doe"/>
                 </label>
+                {/* TODO - phone regex replace with more robust validation */}
                 <label htmlFor="phone">
                     Phone Number:
                     <input
