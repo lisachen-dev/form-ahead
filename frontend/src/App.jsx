@@ -11,7 +11,9 @@ function App() {
     const [paymentMethod, setPaymentMethod] = useState('');
     const [availableDays, setAvailableDays] = useState([]);
 
+    options={
 
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -94,6 +96,7 @@ function App() {
                         <option value="ambivalent">I'm flexible / I don't care</option>
                      </select >
                  </label>
+                 <MultiCheckBox checkedItems={availableDays} setCheckedItems={setAvailableDays} options={options}/>
 
 
 
