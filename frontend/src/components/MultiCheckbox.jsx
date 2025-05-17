@@ -16,17 +16,18 @@ export default function MultiCheckbox({ options, checkedItems, setCheckedItems }
     return (
         <div>
             {options.map( option => (
-                <div key={option.value}>
+                <fieldset key={option.value}>
                     <label htmlFor={option.value}>
                         <input
                             id={option.value}
                             type="checkbox"
                             value={option.value}
                             onChange={handleCheckbox}
+                            checked={checkedItems.includes(option.value)}
                         />
                         {option.label}
                     </label>
-                </div>
+                </fieldset>
             ))}
             <p>Selected values: {checkedItems.join("\n ")}</p>
         </div>
