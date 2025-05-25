@@ -29,7 +29,10 @@ export default function MultiCheckbox({ options, checkedItems, setCheckedItems }
                     </label>
                 </fieldset>
             ))}
-            <p>Selected values: {checkedItems.join("\n ")}</p>
+{/*             <p>Selected values: {checkedItems.join("\n ")}</p> */}
+            <p>{checkedItems.map(
+                value => options.find(option => option.value === value)?.label
+            ).join("\n ")}</p>
         </div>
     )
 };
