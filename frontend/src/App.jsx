@@ -13,7 +13,8 @@ function App() {
         guestCount : 1,
         allergies : '',
         paymentMethod : '',
-        availableDays : []
+        availableDays : [],
+        additionalNotes : ''
     });
 
     const options=[
@@ -49,6 +50,7 @@ function App() {
         console.log("Allergies: ", formData.allergies);
         console.log("Payment Method: ", formData.paymentMethod);
         console.log("Available Days: ", formData.availableDays);
+        console.log("Additional Notes: ", formData.additionalNotes);
     }
 
     return (

@@ -10,7 +10,8 @@ export default function Form({formData, setFormData, handleChange, options, hand
         guestCount,
         allergies,
         paymentMethod,
-        availableDays
+        availableDays,
+        additionalNotes
    } = formData;
 
 
@@ -18,7 +19,7 @@ export default function Form({formData, setFormData, handleChange, options, hand
         <>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="name">
-                    Name:
+                    <legend>Name:</legend>
                     <input
                         required
                         id="name"
@@ -30,29 +31,29 @@ export default function Form({formData, setFormData, handleChange, options, hand
                 </label>
                 {/* TODO - phone regex replace with more robust validation */}
                 <label htmlFor="phone">
-                    Phone Number:
+                    <legend>Phone Number:</legend>
                     <input
                         id="phone"
                         name="phone"
                         type="tel"
                         value={phone}
-                        pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+                        pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                         onChange={(e) => handleChange(e)}
                         autoComplete="tel"
-                        placeholder="e.g., 123-123-1234" />
+                        placeholder="e.g. 123-123-1234" />
                 </label>
                  <label htmlFor="email">
-                     Email:
+                     <legend>Email:</legend>
                     <input
                         id="email"
                         name="email"
                         type="email"
                         value={email}
-                        onChange={(e) => handleChange(e.target.value)}
+                        onChange={(e) => handleChange(e)}
                         placeholder="iAmAUsername@email.com"/>
                  </label>
                  <label htmlFor="guestCount">
-                     Including yourself, how many people are you responding for?
+                     <legend>Including yourself, how many people are you responding for?</legend>
                     <input
                         id="guestCount"
                         name="guestCount"
@@ -62,7 +63,7 @@ export default function Form({formData, setFormData, handleChange, options, hand
                     <small>Note: This helps us avoid double-counting. You can also send this link to others if they want to submit their own response.</small>
                  </label>
                  <label htmlFor="allergies">
-                     Please note any allergies or dietary restrictions we should know about.
+                     <legend>Please note any allergies or dietary restrictions we should know about.</legend>
                     <textarea
                         id="allergies"
                         name="allergies"
@@ -74,7 +75,7 @@ export default function Form({formData, setFormData, handleChange, options, hand
                         />
                  </label>
                  <label htmlFor="paymentMethod">
-                     If we’re sharing food or drinks, how do you prefer to handle the cost?
+                     <legend>If we’re sharing food or drinks, how do you prefer to handle the cost?</legend>
                      <select
                         id="paymentMethod"
                         name="paymentMethod"
@@ -89,11 +90,19 @@ export default function Form({formData, setFormData, handleChange, options, hand
                  </label>
                  <MultiCheckBox
                     checkedItems={formData.availableDays}
+                    formData={formData}
                     setFormData={setFormData}
-                    options={options}/>
-
-
-
+                    options={options}
+                />
+                <label htmlFor="additionalNotes">
+                    <legend>Additional Notes: </legend>
+                    <textarea
+                        id="additionalNotes"
+                        name="additionalNotes"
+                        value={additionalNotes}
+                        onChange={(e) => handleChange(e)}
+                        placeholder="notes"/>
+                 </label>
 
                 <button type="submit">Submit</button>
             </form>
