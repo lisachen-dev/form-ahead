@@ -2,21 +2,19 @@ import React, { useState } from 'react';
 
 export default function MultiCheckbox({ options, checkedItems, formData, setFormData }){
 
-    const handleCheckbox = (e) => {
-        const updatedDays = e.target.value;
-        const isChecked = e.target.checked;
+    const { availableDays } = formData;
 
-        if (isChecked){
-            setFormData({
-                ...formData,
-                availableDays: [...checkedItems, updatedDays]
-            });
-        } else {
-            setFormData({
-                ...formData,
-                availableDays: checkedItems.filter(item => item !== updatedDays)
-          });
-        }
+    const handleCheckbox = (e) => {
+        const {value, checked} = e.target;
+
+        const newDays = checked
+            ? [...availableDays, value]
+            : checkedItems.filter(item => item !== value);
+
+        setFormData({
+            ...formData,
+            availableDays: newDays
+        })
     }
 
     return (
@@ -36,7 +34,6 @@ export default function MultiCheckbox({ options, checkedItems, formData, setForm
                     </label>
                 </fieldset>
             ))}
-{/*             <p>Selected values: {checkedItems.join("\n ")}</p> */}
             <p>{checkedItems.map(
                 value => options.find(option => option.value === value)?.label
             ).join("\n ")}</p>
