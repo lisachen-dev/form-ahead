@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export default function MultiCheckbox({ options, checkedItems, formData, setFormData }){
+export default function MultiCheckbox({ options, formData, setFormData }){
 
     const { availableDays } = formData;
 
@@ -9,7 +9,7 @@ export default function MultiCheckbox({ options, checkedItems, formData, setForm
 
         const newDays = checked
             ? [...availableDays, value]
-            : checkedItems.filter(item => item !== value);
+            : availableDays.filter(item => item !== value);
 
         setFormData({
             ...formData,
@@ -28,13 +28,13 @@ export default function MultiCheckbox({ options, checkedItems, formData, setForm
                             type="checkbox"
                             value={option.value}
                             onChange={handleCheckbox}
-                            checked={checkedItems.includes(option.value)}
+                            checked={availableDays.includes(option.value)}
                         />
                         {option.label}
                     </label>
                 </fieldset>
             ))}
-            <p>{checkedItems.map(
+            <p>{availableDays.map(
                 value => options.find(option => option.value === value)?.label
             ).join("\n ")}</p>
         </div>
