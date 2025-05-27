@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import './App.css';
-import { Form } from './components';
+import { DisplaySummary, Form } from './components';
 
 
 
 function App() {
 
     const [formData, setFormData] = useState({
-        name : '',
+        fullName : '',
         phone : '',
         email : '',
         guestCount : 1,
@@ -43,7 +43,7 @@ function App() {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log("Submitted!");
-        console.log("Name: ", formData.name);
+        console.log("Name: ", formData.fullName);
         console.log("Phone: ", formData.phone)
         console.log("Email: ", formData.email);
         console.log("GuestCount: ", formData.guestCount);
@@ -62,6 +62,7 @@ function App() {
                 options={options}
                 handleSubmit={handleSubmit}
             />
+            <DisplaySummary formData={formData} options={options}/>
         </div>
     )
 }

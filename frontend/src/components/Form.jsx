@@ -4,7 +4,7 @@ import { MultiCheckBox } from './'
 export default function Form({formData, setFormData, handleChange, options, handleSubmit}){
 
     const {
-        name,
+        fullName,
         phone,
         email,
         guestCount,
@@ -18,14 +18,14 @@ export default function Form({formData, setFormData, handleChange, options, hand
     return(
         <>
             <form onSubmit={handleSubmit}>
-                <label htmlFor="name">
+                <label htmlFor="fullName">
                     <legend>Name:</legend>
                     <input
                         required
-                        id="name"
-                        name="name"
+                        id="fullName"
+                        name="fullName"
                         type="text"
-                        value={name}
+                        value={fullName}
                         onChange={(e) => handleChange(e)}
                         placeholder="Jane Doe"/>
                 </label>
@@ -50,7 +50,7 @@ export default function Form({formData, setFormData, handleChange, options, hand
                         type="email"
                         value={email}
                         onChange={(e) => handleChange(e)}
-                        placeholder="iAmAUsername@email.com"/>
+                        placeholder="USER@email.com"/>
                  </label>
                  <label htmlFor="guestCount">
                      <legend>Including yourself, how many people are you responding for?</legend>
