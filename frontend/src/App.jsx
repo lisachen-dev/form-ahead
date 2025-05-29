@@ -9,12 +9,14 @@ function App() {
     const questionData = [
         {
              id: "fullName",
+             isRequired: true,
              type: "text",
              prompt: "Name:",
              placeholder: "Ash Ketchum"
         },
         {
             id: "phone",
+            isRequired: true,
             type: "tel",
             prompt: "Phone Number:",
             pattern: "[0-9]{10}",
@@ -22,6 +24,7 @@ function App() {
         },
         {
             id: "email",
+            isRequired: true,
             type: "email",
             prompt: "Email:",
             placeholder: "e.g. user@email.com"
@@ -35,6 +38,7 @@ function App() {
         },
         {
             id: "allergies",
+            isRequired: false,
             type: "textarea",
             prompt: "Please note any allergies or dietary restrictions we should know about.",
             columns: "30",
@@ -43,6 +47,7 @@ function App() {
         },
         {
             id: "paymentMethod",
+            isRequired: true,
             type: "select",
             prompt: "If we're sharing food or drinks, how do you prefer to handle the cost?",
             methods: [
@@ -127,10 +132,10 @@ function App() {
     return (
         <div>
             <Form
+                questionData={questionData}
                 formData={formData}
                 setFormData={setFormData}
                 handleChange={handleChange}
-                options={questionData[6].options}
                 handleSubmit={handleSubmit}
             />
             <DisplaySummary formData={formData} options={questionData[6].options}/>

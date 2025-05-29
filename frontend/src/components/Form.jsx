@@ -1,7 +1,7 @@
 import React from 'react';
 import { MultiCheckBox } from './'
 
-export default function Form({formData, setFormData, handleChange, options, handleSubmit}){
+export default function Form({questionData, formData, setFormData, handleChange, handleSubmit}){
 
     const {
         fullName,
@@ -17,6 +17,17 @@ export default function Form({formData, setFormData, handleChange, options, hand
     return(
         <>
             <form onSubmit={handleSubmit}>
+                {questionData.map( question => {
+                    const { id, type } = question
+                    if(question.type === "text"){
+                        <TextInput
+                            question={question}
+                            handleChange={handleChange}
+                            formDataVal={formData[id]}
+                        />
+                    }
+
+                })}
                 <label htmlFor="fullName">
                     <legend>Name:</legend>
                     <input
@@ -90,7 +101,7 @@ export default function Form({formData, setFormData, handleChange, options, hand
                 <MultiCheckBox
                    formData={formData}
                    setFormData={setFormData}
-                   options={options}
+                   options={questionData[6].options}
                 />
                 <label htmlFor="additionalNotes">
                     <legend>Additional Notes: </legend>
