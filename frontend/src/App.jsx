@@ -17,6 +17,89 @@ function App() {
         additionalNotes : ''
     });
 
+    const questionData = [
+        {
+             id: "fullName",
+             type: "text",
+             prompt: "Name:",
+             placeholder: "Ash Ketchum"
+        },
+        {
+            id: "phone",
+            type: "tel",
+            prompt: "Phone Number:",
+            pattern: "[0-9]{10}",
+            placeholder: "e.g. 1234567890"
+        },
+        {
+            id: "email",
+            type: "email",
+            prompt: "Email:",
+            placeholder: "e.g. user@email.com"
+        },
+        {
+            id: "guestCount",
+            type: "number",
+            prompt: "Including yourself, how many people are you bringing?",
+            contextNote: "Note: This helps us avoid double-counting. You can also send this link to others if they want to submit their own response."
+        },
+        {
+            id: "allergies",
+            type: "textarea",
+            prompt: "Please note any allergies or dietary restrictions we should know about.",
+            columns: "30",
+            rows: "5",
+            placeholder:"e.g. pineapple, gluten, dairy..."
+        },
+        {
+            id: "paymentMethod",
+            type: "select",
+            prompt: "If we're sharing food or drinks, how do you prefer to handle the cost?",
+            methods: [
+                {
+                    value: "",
+                    display: "-- Select --"
+                },
+                {
+                    value: "split",
+                    display: "Split the check evenly"
+                },
+                {
+                    value: "self",
+                    display: "Pay only for what I ordered"
+                },
+                {
+                    value: "ambivalent",
+                    display: "I'm flexible / I don't care"
+                }
+            ]
+        },
+        {
+            id: "availableDays",
+            type: "checkbox",
+            options: [
+                {
+                    label: "Friday May 16",
+                    value: "option1"
+                },
+                {
+                    label: "Saturday May 17",
+                    value: "option2"
+                },
+                {
+                    label: "Sunday May 18",
+                    value: "option3"
+                }
+            ]
+        },
+        {
+            id: "additionalNotes",
+            type: "textarea",
+            prompt: "Additional Notes:",
+            placeholder: "Is there anything else I need to know?"
+        }
+    ]
+
     const options=[
         {
             label: "Friday May 16",

@@ -89,7 +89,6 @@ export default function Form({formData, setFormData, handleChange, options, hand
                      </select >
                  </label>
                  <MultiCheckBox
-                    checkedItems={formData.availableDays}
                     formData={formData}
                     setFormData={setFormData}
                     options={options}
