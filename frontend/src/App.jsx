@@ -6,17 +6,6 @@ import { DisplaySummary, Form } from './components';
 
 function App() {
 
-    const [formData, setFormData] = useState({
-        fullName : '',
-        phone : '',
-        email : '',
-        guestCount : 1,
-        allergies : '',
-        paymentMethod : '',
-        availableDays : [],
-        additionalNotes : ''
-    });
-
     const questionData = [
         {
              id: "fullName",
@@ -41,6 +30,7 @@ function App() {
             id: "guestCount",
             type: "number",
             prompt: "Including yourself, how many people are you bringing?",
+            default: 1,
             contextNote: "Note: This helps us avoid double-counting. You can also send this link to others if they want to submit their own response."
         },
         {
@@ -48,7 +38,7 @@ function App() {
             type: "textarea",
             prompt: "Please note any allergies or dietary restrictions we should know about.",
             columns: "30",
-            rows: "5",
+            rows: "2",
             placeholder:"e.g. pineapple, gluten, dairy..."
         },
         {
@@ -100,20 +90,18 @@ function App() {
         }
     ]
 
-    const options=[
-        {
-            label: "Friday May 16",
-            value: "option1"
-        },
-        {
-            label: "Saturday May 17",
-            value: "option2"
-        },
-        {
-            label: "Sunday May 18",
-            value: "option3"
+    const defaultData = questionData.reduce((accumulator, question) => {
+        if(question.type === "number"){
+            accumulator[question.id] = question.default;
+        } else if (question.type === "select" || question.type === "checkbox"){
+            accumulator[question.id] = [];
+        } else {
+            accumulator[question.id] = '';
         }
-    ]
+        return accumulator;
+    },{})
+
+    const [formData, setFormData] = useState(defaultData);
 
     const handleChange = (e) => {
         const eventName = e.target.name;
@@ -142,10 +130,10 @@ function App() {
                 formData={formData}
                 setFormData={setFormData}
                 handleChange={handleChange}
-                options={options}
+                options={questionData[6].options}
                 handleSubmit={handleSubmit}
             />
-            <DisplaySummary formData={formData} options={options}/>
+            <DisplaySummary formData={formData} options={questionData[6].options}/>
         </div>
     )
 }

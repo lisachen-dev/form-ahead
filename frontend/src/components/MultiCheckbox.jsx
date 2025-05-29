@@ -10,7 +10,6 @@ export default function MultiCheckbox({ options, formData, setFormData }){
         const newDays = checked
             ? [...availableDays, value]
             : availableDays.filter(item => item !== value);
-
         setFormData({
             ...formData,
             availableDays: newDays
@@ -28,14 +27,14 @@ export default function MultiCheckbox({ options, formData, setFormData }){
                             type="checkbox"
                             value={option.value}
                             onChange={handleCheckbox}
-                            checked={availableDays.includes(option.value)}
+                            checked={availableDays?.includes(option.value)}
                         />
                         {option.label}
                     </label>
                 </fieldset>
             ))}
             <p>{availableDays.map(
-                value => options.find(option => option.value === value)?.label
+                value => options.find(option => option.value === value).label
             ).join("\n ")}</p>
         </div>
     )

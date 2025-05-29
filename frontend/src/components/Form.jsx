@@ -14,7 +14,6 @@ export default function Form({formData, setFormData, handleChange, options, hand
         additionalNotes
    } = formData;
 
-
     return(
         <>
             <form onSubmit={handleSubmit}>
@@ -42,7 +41,7 @@ export default function Form({formData, setFormData, handleChange, options, hand
                         autoComplete="tel"
                         placeholder="e.g. 123-123-1234" />
                 </label>
-                 <label htmlFor="email">
+                <label htmlFor="email">
                      <legend>Email:</legend>
                     <input
                         id="email"
@@ -51,47 +50,34 @@ export default function Form({formData, setFormData, handleChange, options, hand
                         value={email}
                         onChange={(e) => handleChange(e)}
                         placeholder="USER@email.com"/>
-                 </label>
-                 <label htmlFor="guestCount">
-                     <legend>Including yourself, how many people are you responding for?</legend>
-                    <input
-                        id="guestCount"
-                        name="guestCount"
-                        type="number"
-                        value={guestCount}
-                        onChange={(e) => handleChange(e)} />
-                    <small>Note: This helps us avoid double-counting. You can also send this link to others if they want to submit their own response.</small>
-                 </label>
-                 <label htmlFor="allergies">
-                     <legend>Please note any allergies or dietary restrictions we should know about.</legend>
-                    <textarea
-                        id="allergies"
-                        name="allergies"
-                        value={allergies}
-                        onChange={(e) => handleChange(e)}
-                        cols="30"
-                        rows="5"
-                        placeholder="e.g. pineapple, gluten, dairy..."
-                        />
-                 </label>
-                 <label htmlFor="paymentMethod">
-                     <legend>If we’re sharing food or drinks, how do you prefer to handle the cost?</legend>
-                     <select
-                        id="paymentMethod"
-                        name="paymentMethod"
-                        value={paymentMethod}
-                        onChange = {(e) => handleChange(e)}
-                     >
-                        <option value="">-- Select --</option>
-                        <option value="split">Split the check evenly</option>
-                        <option value="self">Pay only for what I ordered</option>
-                        <option value="ambivalent">I'm flexible / I don't care</option>
-                     </select >
-                 </label>
-                 <MultiCheckBox
-                    formData={formData}
-                    setFormData={setFormData}
-                    options={options}
+                </label>
+                <label htmlFor="guestCount">
+                    <legend>Including yourself, how many people are you responding for?</legend>
+                   <input
+                       id="guestCount"
+                       name="guestCount"
+                       type="number"
+                       value={guestCount}
+                       onChange={(e) => handleChange(e)} />
+                   <small>Note: This helps us avoid double-counting. You can also send this link to others if they want to submit their own response.</small>
+                </label>
+                <label htmlFor="allergies">
+                    <legend>Please note any allergies or dietary restrictions we should know about.</legend>
+                   <textarea
+                       id="allergies"
+                       name="allergies"
+                       value={allergies}
+                       onChange={(e) => handleChange(e)}
+                       cols="30"
+                       rows="5"
+                       placeholder="e.g. pineapple, gluten, dairy..."
+                       />
+                </label>
+
+                <MultiCheckBox
+                   formData={formData}
+                   setFormData={setFormData}
+                   options={options}
                 />
                 <label htmlFor="additionalNotes">
                     <legend>Additional Notes: </legend>
