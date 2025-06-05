@@ -1,5 +1,6 @@
 import React from 'react';
-import { MultiCheckBox } from './'
+import { MultiCheckBox } from './';
+import { TextInput } from './';
 
 export default function Form({questionData, formData, setFormData, handleChange, handleSubmit}){
 
@@ -17,28 +18,19 @@ export default function Form({questionData, formData, setFormData, handleChange,
     return(
         <>
             <form onSubmit={handleSubmit}>
-                {questionData.map( question => {
-                    const { id, type } = question
-                    if(question.type === "text"){
-                        <TextInput
-                            question={question}
-                            handleChange={handleChange}
-                            formDataVal={formData[id]}
-                        />
+                {questionData.map(question => {
+                    if(question.type == "text"){
+                        return (
+                            <TextInput
+                                question={question}
+                                handleChange={handleChange}
+                                formDataKey={question.id}
+                                formDataVal={formData[question.id]}
+                            />
+                        )
                     }
-
                 })}
-                <label htmlFor="fullName">
-                    <legend>Name:</legend>
-                    <input
-                        required
-                        id="fullName"
-                        name="fullName"
-                        type="text"
-                        value={fullName}
-                        onChange={(e) => handleChange(e)}
-                        placeholder="Jane Doe"/>
-                </label>
+
                 {/* TODO - phone regex replace with more robust validation */}
                 <label htmlFor="phone">
                     <legend>Phone Number:</legend>
