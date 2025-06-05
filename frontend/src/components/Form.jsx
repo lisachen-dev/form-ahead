@@ -1,6 +1,5 @@
 import React from 'react';
-import { MultiCheckBox } from './';
-import { TextInput } from './';
+import { MultiCheckBox, TelInput, TextInput } from './';
 
 export default function Form({questionData, formData, setFormData, handleChange, handleSubmit}){
 
@@ -29,9 +28,19 @@ export default function Form({questionData, formData, setFormData, handleChange,
                             />
                         )
                     }
+//                  TODO - phone regex replace with more robust validation
+                    else if(question.type == "tel"){
+                        return (
+                            <TelInput
+                                question={question}
+                                handleChange={handleChange}
+                                formDataKey={question.id}
+                                formDataVal={formData[question.id]}
+                            />
+                        )
+                    }
                 })}
 
-                {/* TODO - phone regex replace with more robust validation */}
                 <label htmlFor="phone">
                     <legend>Phone Number:</legend>
                     <input

@@ -1,8 +1,8 @@
 import React from 'react';
 
-export default function TextInput({ question, handleChange, formDataKey, formDataVal }) {
+export default function TelInput({ question, handleChange, formDataKey, formDataVal }) {
 
-    const { isRequired, type, prompt, placeholder } = question;
+    const { isRequired, type, prompt, pattern, placeholder } = question;
 
     return(
         <fieldset>
@@ -14,6 +14,7 @@ export default function TextInput({ question, handleChange, formDataKey, formDat
                     type={type}
                     value={formDataVal}
                     onChange={handleChange}
+                    pattern={pattern}
                     placeholder={placeholder}
                     required={isRequired}
                 />
