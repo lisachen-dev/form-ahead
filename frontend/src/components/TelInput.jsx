@@ -16,6 +16,7 @@ export default function TelInput({ question, handleChange, formDataKey, formData
                     onChange={handleChange}
                     pattern={pattern}
                     placeholder={placeholder}
+                    autoComplete="tel"
                     required={isRequired}
                 />
             </label>
