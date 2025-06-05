@@ -3,9 +3,7 @@ import React from 'react';
 export default function TextInput({ question, handleChange, formDataKey, formDataVal }) {
 
     const { isRequired, type, prompt, placeholder } = question;
-    console.log("TextInput Component Created:");
-    console.log(formDataKey)
-    console.log(formDataVal)
+    console.log("Success! TextInput Component Created:");
 
     return(
         <fieldset>
