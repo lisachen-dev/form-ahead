@@ -1,21 +1,24 @@
 import React from 'react';
 
-export default function TextInput({ question, handleChange, formDataVal }) {
+export default function TextInput({ question, handleChange, formDataKey, formDataVal }) {
 
-    const { id, isRequired, type, prompt, placeholder } = question;
+    const { isRequired, type, prompt, placeholder } = question;
+    console.log("TextInput Component Created:");
+    console.log(formDataKey)
+    console.log(formDataVal)
 
     return(
         <fieldset>
-            <label htmlFor={id}>
-                <legend>Name:</legend>
+            <label htmlFor={formDataKey}>
+                <legend>{prompt}</legend>
                 <input
-                    required
-                    id={id}
-                    name={id}
+                    id={formDataKey}
+                    name={formDataKey}
                     type={type}
                     value={formDataVal}
-                    onChange={(e) => handleChange(e)}
-                    placeholder={question.placeholder}
+                    onChange={handleChange}
+                    placeholder={placeholder}
+                    required={isRequired}
                 />
             </label>
         </fieldset>
