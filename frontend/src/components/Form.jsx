@@ -3,6 +3,7 @@ import {
     EmailInput,
     MultiCheckBox,
     NumberInput,
+    SelectInput,
     TelInput,
     TextAreaInput,
     TextInput
@@ -45,9 +46,7 @@ export default function Form({questionData, formData, setFormData, handleChange,
                                 formDataVal={formData[question.id]}
                             />
                         )
-                    }
-
-                    else if(question.type == "email"){
+                    } else if(question.type == "email"){
                         return (
                             <EmailInput
                                 question={question}
@@ -56,8 +55,7 @@ export default function Form({questionData, formData, setFormData, handleChange,
                                 formDataVal={formData[question.id]}
                             />
                         )
-                    }
-                    else if(question.type == "number"){
+                    } else if(question.type == "number"){
                         return (
                             <NumberInput
                                 question={question}
@@ -66,8 +64,7 @@ export default function Form({questionData, formData, setFormData, handleChange,
                                 formDataVal={formData[question.id]}
                             />
                         )
-                    }
-                    else if(question.type == "textarea"){
+                    } else if(question.type == "textarea"){
                         return (
                             <TextAreaInput
                                 question={question}
@@ -76,6 +73,25 @@ export default function Form({questionData, formData, setFormData, handleChange,
                                 formDataVal={formData[question.id]}
                             />
                         )
+                    } else if(question.type =="select"){
+                        return (
+                            <SelectInput
+                                question={question}
+                                handleChange={handleChange}
+                                formData={formData}
+                                setFormData={setFormData}
+                            />
+                        )
+                    } else if(question.type == "checkbox"){
+                        return (
+                            <MultiCheckBox
+                                question={question}
+                                formData={formData}
+                                setFormData={setFormData}
+                            />
+                        )
+                    } else {
+                        return <p>There is no componenet for this</p>
                     }
                 })}
 
@@ -93,20 +109,7 @@ export default function Form({questionData, formData, setFormData, handleChange,
                     <option value="ambivalent">I'm flexible / I don't care</option>
                     </select >
                 </label>
-                <MultiCheckBox
-                   formData={formData}
-                   setFormData={setFormData}
-                   options={questionData[6].options}
-                />
-                <label htmlFor="additionalNotes">
-                    <legend>Additional Notes: </legend>
-                    <textarea
-                        id="additionalNotes"
-                        name="additionalNotes"
-                        value={additionalNotes}
-                        onChange={(e) => handleChange(e)}
-                        placeholder="notes"/>
-                 </label>
+
 
                 <button type="submit">Submit</button>
             </form>

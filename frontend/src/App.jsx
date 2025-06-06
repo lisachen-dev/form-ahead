@@ -42,7 +42,7 @@ function App() {
             type: "textarea",
             prompt: "Please note any allergies or dietary restrictions we should know about.",
             columns: "30",
-            rows: "2",
+            rows: "3",
             placeholder:"e.g. pineapple, gluten, dairy..."
         },
         {
@@ -90,6 +90,8 @@ function App() {
         {
             id: "additionalNotes",
             type: "textarea",
+            columns: "50",
+            rows: "3",
             prompt: "Additional Notes:",
             placeholder: "Is there anything else I need to know?"
         }

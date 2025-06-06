@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 
-export default function MultiCheckbox({ options, formData, setFormData }){
+export default function MultiCheckbox({ question, formData, setFormData }){
 
+    const { id, type, isRequired, options } = question;
     const { availableDays } = formData;
 
     const handleCheckbox = (e) => {
@@ -19,7 +20,7 @@ export default function MultiCheckbox({ options, formData, setFormData }){
     return (
         <div>
             {options.map( option => (
-                <fieldset key={option.value}>
+                <fieldset key={id}>
                     <label htmlFor={option.value}>
                         <input
                             id={option.value}
