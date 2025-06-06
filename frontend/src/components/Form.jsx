@@ -41,18 +41,6 @@ export default function Form({questionData, formData, setFormData, handleChange,
                     }
                 })}
 
-                <label htmlFor="phone">
-                    <legend>Phone Number:</legend>
-                    <input
-                        id="phone"
-                        name="phone"
-                        type="tel"
-                        value={phone}
-                        pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-                        onChange={(e) => handleChange(e)}
-                        autoComplete="tel"
-                        placeholder="e.g. 123-123-1234" />
-                </label>
                 <label htmlFor="email">
                      <legend>Email:</legend>
                     <input

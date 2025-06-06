@@ -20,7 +20,7 @@ function App() {
             type: "tel",
             prompt: "Phone Number:",
             pattern: "[0-9]{3}-[0-9]{3}-[0-9]{4}",
-            placeholder: "e.g. 1234567890"
+            placeholder: "e.g. 123-456-7890"
         },
         {
             id: "email",
