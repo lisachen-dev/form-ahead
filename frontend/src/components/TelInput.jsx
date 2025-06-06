@@ -9,6 +9,7 @@ export default function TelInput({ question, handleChange, formDataKey, formData
             <label htmlFor={formDataKey}>
                 <legend>{prompt}</legend>
                 <input
+                    key={formDataKey}
                     id={formDataKey}
                     name={formDataKey}
                     type={type}
