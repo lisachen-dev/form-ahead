@@ -2,6 +2,7 @@ import React from 'react';
 import {
     EmailInput,
     MultiCheckBox,
+    NumberInput,
     TelInput,
     TextInput
     } from './';
@@ -55,28 +56,19 @@ export default function Form({questionData, formData, setFormData, handleChange,
                             />
                         )
                     }
+                    else if(question.type == "number"){
+                        return (
+                            <NumberInput
+                                question={question}
+                                handleChange={handleChange}
+                                formDataKey={question.id}
+                                formDataVal={formData[question.id]}
+                            />
+                        )
+                    }
                 })}
 
-                <label htmlFor="email">
-                     <legend>Email:</legend>
-                    <input
-                        id="email"
-                        name="email"
-                        type="email"
-                        value={email}
-                        onChange={(e) => handleChange(e)}
-                        placeholder="USER@email.com"/>
-                </label>
-                <label htmlFor="guestCount">
-                    <legend>Including yourself, how many people are you responding for?</legend>
-                   <input
-                       id="guestCount"
-                       name="guestCount"
-                       type="number"
-                       value={guestCount}
-                       onChange={(e) => handleChange(e)} />
-                   <small>Note: This helps us avoid double-counting. You can also send this link to others if they want to submit their own response.</small>
-                </label>
+
                 <label htmlFor="allergies">
                     <legend>Please note any allergies or dietary restrictions we should know about.</legend>
                    <textarea
