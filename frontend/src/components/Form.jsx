@@ -4,6 +4,7 @@ import {
     MultiCheckBox,
     NumberInput,
     TelInput,
+    TextAreaInput,
     TextInput
     } from './';
 
@@ -66,21 +67,18 @@ export default function Form({questionData, formData, setFormData, handleChange,
                             />
                         )
                     }
+                    else if(question.type == "textarea"){
+                        return (
+                            <TextAreaInput
+                                question={question}
+                                handleChange={handleChange}
+                                formDataKey={question.id}
+                                formDataVal={formData[question.id]}
+                            />
+                        )
+                    }
                 })}
 
-
-                <label htmlFor="allergies">
-                    <legend>Please note any allergies or dietary restrictions we should know about.</legend>
-                   <textarea
-                       id="allergies"
-                       name="allergies"
-                       value={allergies}
-                       onChange={(e) => handleChange(e)}
-                       cols="30"
-                       rows="5"
-                       placeholder="e.g. pineapple, gluten, dairy..."
-                       />
-                </label>
                 <label htmlFor="paymentMethod">
                     <legend>If we’re sharing food or drinks, how do you prefer to handle the cost?</legend>
                     <select
