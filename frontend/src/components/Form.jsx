@@ -1,5 +1,10 @@
 import React from 'react';
-import { MultiCheckBox, TelInput, TextInput } from './';
+import {
+    EmailInput,
+    MultiCheckBox,
+    TelInput,
+    TextInput
+    } from './';
 
 export default function Form({questionData, formData, setFormData, handleChange, handleSubmit}){
 
@@ -32,6 +37,17 @@ export default function Form({questionData, formData, setFormData, handleChange,
                     else if(question.type == "tel"){
                         return (
                             <TelInput
+                                question={question}
+                                handleChange={handleChange}
+                                formDataKey={question.id}
+                                formDataVal={formData[question.id]}
+                            />
+                        )
+                    }
+
+                    else if(question.type == "email"){
+                        return (
+                            <EmailInput
                                 question={question}
                                 handleChange={handleChange}
                                 formDataKey={question.id}
