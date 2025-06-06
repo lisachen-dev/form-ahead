@@ -33,7 +33,7 @@ function App() {
             id: "guestCount",
             type: "number",
             prompt: "Including yourself, how many people are you bringing?",
-            default: 1,
+            placeholder: 1,
             contextNote: "Note: This helps us avoid double-counting. You can also send this link to others if they want to submit their own response."
         },
         {
