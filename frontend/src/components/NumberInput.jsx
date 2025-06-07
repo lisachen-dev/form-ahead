@@ -19,9 +19,10 @@ export default function NumberInput({ question, handleChange, formDataVal }) {
                     onChange={handleChange}
                     placeholder={placeholder}
                     required={isRequired}
+                    aria-describedby={`${id}-note`}
                 />
             </label>
-            <small>{contextNote}</small>
+            <small id={`${id}-note`}>{contextNote}</small>
         </fieldset>
     )
 }
