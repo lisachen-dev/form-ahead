@@ -101,7 +101,7 @@ function App() {
         if(question.type === "number"){
             accumulator[question.id] = question.default;
         } else if (question.type === "select" || question.type === "checkbox"){
-            accumulator[question.id] = [];
+            accumulator[question.id] = "";
         } else {
             accumulator[question.id] = '';
         }

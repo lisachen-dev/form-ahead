@@ -78,8 +78,8 @@ export default function Form({questionData, formData, setFormData, handleChange,
                             <SelectInput
                                 question={question}
                                 handleChange={handleChange}
-                                formData={formData}
-                                setFormData={setFormData}
+                                formDataKey={question.id}
+                                formDataVal={formData[question.id]}
                             />
                         )
                     } else if(question.type == "checkbox"){
@@ -94,22 +94,6 @@ export default function Form({questionData, formData, setFormData, handleChange,
                         return <p>There is no componenet for this</p>
                     }
                 })}
-
-                <label htmlFor="paymentMethod">
-                    <legend>If we’re sharing food or drinks, how do you prefer to handle the cost?</legend>
-                    <select
-                        id="paymentMethod"
-                        name="paymentMethod"
-                        value={paymentMethod}
-                        onChange = {(e) => handleChange(e)}
-                    >
-                    <option value="">-- Select --</option>
-                    <option value="split">Split the check evenly</option>
-                    <option value="self">Pay only for what I ordered</option>
-                    <option value="ambivalent">I'm flexible / I don't care</option>
-                    </select >
-                </label>
-
 
                 <button type="submit">Submit</button>
             </form>
