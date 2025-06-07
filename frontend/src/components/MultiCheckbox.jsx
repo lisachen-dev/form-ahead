@@ -14,7 +14,7 @@ export default function MultiCheckbox({ question, formData, setFormData }){
 
         setFormData({
             ...formData,
-            id: newItems
+            [id]: newItems
         })
     }
 

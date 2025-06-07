@@ -15,7 +15,7 @@ export default function NumberInput({ question, handleChange, formDataVal }) {
                     min={min}
                     max={max}
                     step={step}
-                    value={formDataVal}
+                    value={formDataVal ?? 1}
                     onChange={handleChange}
                     placeholder={placeholder}
                     required={isRequired}
