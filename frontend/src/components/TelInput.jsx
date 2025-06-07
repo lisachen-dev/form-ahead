@@ -12,9 +12,9 @@ export default function TelInput({ question, handleChange, formDataVal }) {
                     id={id}
                     name={id}
                     type="tel"
+                    inputMode="tel"
                     value={formDataVal}
                     onChange={handleChange}
-                    pattern={pattern}
                     placeholder={placeholder}
                     autoComplete="tel"
                     required={isRequired}

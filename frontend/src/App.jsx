@@ -19,7 +19,6 @@ function App() {
             isRequired: true,
             type: "tel",
             prompt: "Phone Number:",
-            pattern: "[0-9]{3}-[0-9]{3}-[0-9]{4}",
             placeholder: "e.g. 123-456-7890"
         },
         {
