@@ -1,16 +1,16 @@
 import React from 'react';
 
-export default function TextInput({ question, handleChange, formDataKey, formDataVal }) {
+export default function TextInput({ question, handleChange, formDataVal }) {
 
-    const { isRequired, type, prompt, placeholder } = question;
+    const { id, isRequired, type, prompt, placeholder } = question;
 
     return(
         <fieldset>
-            <label htmlFor={formDataKey}>
+            <label htmlFor={id}>
                 <legend>{prompt}</legend>
                 <input
-                    id={formDataKey}
-                    name={formDataKey}
+                    id={id}
+                    name={id}
                     type={type}
                     value={formDataVal}
                     onChange={handleChange}

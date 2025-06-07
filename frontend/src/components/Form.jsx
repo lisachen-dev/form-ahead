@@ -29,9 +29,9 @@ export default function Form({questionData, formData, setFormData, handleChange,
                     if(question.type == "text"){
                         return (
                             <TextInput
+                                key={question.id}
                                 question={question}
                                 handleChange={handleChange}
-                                formDataKey={question.id}
                                 formDataVal={formData[question.id]}
                             />
                         )
