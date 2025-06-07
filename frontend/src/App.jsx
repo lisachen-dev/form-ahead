@@ -102,7 +102,7 @@ function App() {
 
     const defaultData = questionData.reduce((accumulator, question) => {
         if(question.type === "number"){
-            accumulator[question.id] = question.default;
+            accumulator[question.id] = question.placeholder;
         } else if (question.type === "checkbox"){
             accumulator[question.id] = [];
         } else {
