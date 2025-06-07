@@ -73,7 +73,7 @@ function App() {
         {
             id: "availableDays",
             type: "checkbox",
-            isRequired: true,
+            prompt: "Choose your availability: ",
             options: [
                 {
                     label: "Friday May 16",
