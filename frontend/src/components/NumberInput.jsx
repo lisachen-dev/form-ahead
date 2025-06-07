@@ -1,18 +1,20 @@
 import React from 'react';
 
-export default function NumberInput({ question, handleChange, formDataKey, formDataVal }) {
+export default function NumberInput({ question, handleChange, formDataVal }) {
 
-    const { isRequired, type, prompt, placeholder, contextNote } = question;
+    const { id, isRequired, type, min, max, step, prompt, placeholder, contextNote } = question;
 
     return(
         <fieldset>
-            <label htmlFor={formDataKey}>
+            <label htmlFor={id}>
                 <legend>{prompt}</legend>
                 <input
-                    key={formDataKey}
-                    id={formDataKey}
-                    name={formDataKey}
-                    type={type}
+                    id={id}
+                    name={id}
+                    type="number"
+                    min={min}
+                    max={max}
+                    step={step}
                     value={formDataVal}
                     onChange={handleChange}
                     placeholder={placeholder}

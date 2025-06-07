@@ -11,7 +11,7 @@ export default function TextInput({ question, handleChange, formDataVal }) {
                 <input
                     id={id}
                     name={id}
-                    type={type}
+                    type="text"
                     value={formDataVal}
                     onChange={handleChange}
                     placeholder={placeholder}

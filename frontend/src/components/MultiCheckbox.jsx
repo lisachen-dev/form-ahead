@@ -20,10 +20,9 @@ export default function MultiCheckbox({ question, formData, setFormData }){
     return (
         <div>
             {options.map( option => (
-                <fieldset>
+                <fieldset key={option.value}>
                     <label htmlFor={option.value}>
                         <input
-                            key={option.value}
                             id={option.value}
                             name={option.value}
                             type="checkbox"

@@ -1,17 +1,17 @@
 import React from 'react';
 
-export default function EmailInput({question, handleChange, formDataKey, formDataVal}){
+export default function EmailInput({question, handleChange, formDataVal}){
 
-    const { isRequired, type, prompt, placeholder } = question;
+    const { id, isRequired, type, prompt, placeholder } = question;
 
     return (
         <fieldset>
-            <label htmlFor={formDataKey}>
+            <label htmlFor={id}>
                 <legend>{prompt}</legend>
                 <input
-                    key={formDataKey}
-                    id={formDataKey}
-                    name={formDataKey}
+                    key={id}
+                    id={id}
+                    name={id}
                     type={type}
                     onChange={handleChange}
                     placeholder={placeholder}
