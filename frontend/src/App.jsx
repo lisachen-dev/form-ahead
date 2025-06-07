@@ -100,8 +100,8 @@ function App() {
     const defaultData = questionData.reduce((accumulator, question) => {
         if(question.type === "number"){
             accumulator[question.id] = question.default;
-        } else if (question.type === "select" || question.type === "checkbox"){
-            accumulator[question.id] = "";
+        } else if (question.type === "checkbox"){
+            accumulator[question.id] = [];
         } else {
             accumulator[question.id] = '';
         }
