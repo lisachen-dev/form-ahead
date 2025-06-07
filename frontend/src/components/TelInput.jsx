@@ -1,18 +1,17 @@
 import React from 'react';
 
-export default function TelInput({ question, handleChange, formDataKey, formDataVal }) {
+export default function TelInput({ question, handleChange, formDataVal }) {
 
-    const { isRequired, type, prompt, pattern, placeholder } = question;
+    const { id, isRequired, type, prompt, pattern, placeholder } = question;
 
     return(
         <fieldset>
-            <label htmlFor={formDataKey}>
+            <label htmlFor={id}>
                 <legend>{prompt}</legend>
                 <input
-                    key={formDataKey}
-                    id={formDataKey}
-                    name={formDataKey}
-                    type={type}
+                    id={id}
+                    name={id}
+                    type="tel"
                     value={formDataVal}
                     onChange={handleChange}
                     pattern={pattern}

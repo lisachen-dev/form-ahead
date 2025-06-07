@@ -11,17 +11,6 @@ import {
 
 export default function Form({questionData, formData, setFormData, handleChange, handleSubmit}){
 
-    const {
-        fullName,
-        phone,
-        email,
-        guestCount,
-        allergies,
-        paymentMethod,
-        availableDays,
-        additionalNotes
-   } = formData;
-
     return(
         <>
             <form onSubmit={handleSubmit}>
@@ -40,58 +29,58 @@ export default function Form({questionData, formData, setFormData, handleChange,
                     else if(question.type == "tel"){
                         return (
                             <TelInput
+                                key={question.id}
                                 question={question}
                                 handleChange={handleChange}
-                                formDataKey={question.id}
                                 formDataVal={formData[question.id]}
                             />
                         )
                     } else if(question.type == "email"){
                         return (
                             <EmailInput
+                                key={question.id}
                                 question={question}
                                 handleChange={handleChange}
-                                formDataKey={question.id}
                                 formDataVal={formData[question.id]}
                             />
                         )
                     } else if(question.type == "number"){
                         return (
                             <NumberInput
+                                key={question.id}
                                 question={question}
                                 handleChange={handleChange}
-                                formDataKey={question.id}
                                 formDataVal={formData[question.id]}
                             />
                         )
                     } else if(question.type == "textarea"){
                         return (
                             <TextAreaInput
+                                key={question.id}
                                 question={question}
                                 handleChange={handleChange}
-                                formDataKey={question.id}
-                                formDataVal={formData[question.id]}
-                            />
+                                formDataVal={formData[question.id]}                            />
                         )
                     } else if(question.type =="select"){
                         return (
                             <SelectInput
+                                key={question.id}
                                 question={question}
                                 handleChange={handleChange}
-                                formDataKey={question.id}
                                 formDataVal={formData[question.id]}
                             />
                         )
                     } else if(question.type == "checkbox"){
                         return (
                             <MultiCheckBox
+                                key={question.id}
                                 question={question}
                                 formData={formData}
                                 setFormData={setFormData}
                             />
                         )
                     } else {
-                        return <p>There is no componenet for this</p>
+                        return <p>Unknown input type: {question.type}</p>
                     }
                 })}
 

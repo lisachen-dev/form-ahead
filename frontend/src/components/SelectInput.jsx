@@ -1,20 +1,20 @@
 import React, { useState } from 'react';
 
-export default function SelectInput({ question, handleChange, formDataKey, formDataVal }){
+export default function SelectInput({ question, handleChange, formDataVal }){
 
     const { id, isRequired, type, prompt, methods } = question;
 
     return (
         <fieldset>
-            <label htmlFor={formDataKey}>
+            <label htmlFor={id}>
                 <legend>{prompt}</legend>
                 <select
-                    key={formDataKey}
-                    id={formDataKey}
-                    name={formDataKey}
+                    type="number"
+                    key={id}
+                    id={id}
+                    name={id}
                     value={formDataVal}
                     onChange={handleChange}
-                    required={isRequired}
                 >
                     {methods.map(method => (
                         <option

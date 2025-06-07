@@ -32,6 +32,9 @@ function App() {
         {
             id: "guestCount",
             type: "number",
+            min: 1,
+            max: 100,
+            step: 1,
             prompt: "Including yourself, how many people are you bringing?",
             placeholder: 1,
             contextNote: "Note: This helps us avoid double-counting. You can also send this link to others if they want to submit their own response."
@@ -47,7 +50,6 @@ function App() {
         },
         {
             id: "paymentMethod",
-            isRequired: true,
             type: "select",
             prompt: "If we're sharing food or drinks, how do you prefer to handle the cost?",
             methods: [
@@ -72,6 +74,7 @@ function App() {
         {
             id: "availableDays",
             type: "checkbox",
+            isRequired: true,
             options: [
                 {
                     label: "Friday May 16",
@@ -89,6 +92,7 @@ function App() {
         },
         {
             id: "additionalNotes",
+            isRequired: false,
             type: "textarea",
             columns: "50",
             rows: "3",

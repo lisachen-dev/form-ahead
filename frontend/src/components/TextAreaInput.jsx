@@ -1,17 +1,17 @@
 import React from 'react';
 
-export default function TextAreaInput({ question, handleChange, formDataKey, formDataVal }) {
+export default function TextAreaInput({ question, handleChange, formDataVal }) {
 
-    const { isRequired, prompt, columns, rows, placeholder} = question;
+    const { id, isRequired, prompt, columns, rows, placeholder} = question;
 
     return(
         <fieldset>
-            <label htmlFor={formDataKey}>
+            <label htmlFor={id}>
                 <legend>{prompt}</legend>
                 <textarea
-                    key={formDataKey}
-                    id={formDataKey}
-                    name={formDataKey}
+                    key={id}
+                    id={id}
+                    name={id}
                     value={formDataVal}
                     onChange={handleChange}
                     cols={columns}
