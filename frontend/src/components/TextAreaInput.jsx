@@ -9,7 +9,6 @@ export default function TextAreaInput({ question, handleChange, formDataVal }) {
             <label htmlFor={id}>
                 <legend>{prompt}</legend>
                 <textarea
-                    key={id}
                     id={id}
                     name={id}
                     value={formDataVal}
@@ -18,6 +17,7 @@ export default function TextAreaInput({ question, handleChange, formDataVal }) {
                     rows={rows}
                     placeholder={placeholder}
                     required={isRequired}
+                    spellCheck={true}
                 />
             </label>
         </fieldset>
