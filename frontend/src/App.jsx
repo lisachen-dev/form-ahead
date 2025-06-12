@@ -30,6 +30,7 @@ function App() {
         },
         {
             id: "guestCount",
+            isRequired: true,
             type: "number",
             min: 1,
             max: 100,
