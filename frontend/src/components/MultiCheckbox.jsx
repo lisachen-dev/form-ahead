@@ -24,15 +24,17 @@ export default function MultiCheckbox({ question, formData, setFormData }){
                 <legend>{prompt || "Select all that apply"}</legend>
                 {options.map( option => (
                     <label key={option.value} htmlFor={option.value}>
-                        <input
-                            id={option.value}
-                            name={id}
-                            type="checkbox"
-                            value={option.value}
-                            onChange={handleCheckbox}
-                            checked={checkedItems?.includes(option.value)}
-                        />
-                        {option.label}
+                        <ul>
+                            <input
+                                id={option.value}
+                                name={id}
+                                type="checkbox"
+                                value={option.value}
+                                onChange={handleCheckbox}
+                                checked={checkedItems?.includes(option.value)}
+                            />
+                            {option.label}
+                        </ul>
                     </label>
                 ))}
             </fieldset>
