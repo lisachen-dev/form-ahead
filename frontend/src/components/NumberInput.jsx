@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function NumberInput({ question, handleChange, formDataVal }) {
 
-    const { id, isRequired, type, min, max, step, prompt, placeholder, contextNote } = question;
+    const { id, isRequired, min, max, step, prompt, placeholder, contextNote } = question;
 
     return(
         <fieldset>
@@ -15,8 +15,10 @@ export default function NumberInput({ question, handleChange, formDataVal }) {
                     min={min}
                     max={max}
                     step={step}
-                    value={formDataVal ?? 1}
+                    value={formDataVal ?? ''}
                     onChange={handleChange}
+                    onInvalid={(e) => e.target.setCustomValidity(`Please enter a number between ${min} and ${max}.`)}
+                    onInput={(e) => e.target.setCustomValidity('')} // clear message when user fixes input
                     placeholder={placeholder}
                     required={isRequired}
                     aria-describedby={`${id}-note`}
