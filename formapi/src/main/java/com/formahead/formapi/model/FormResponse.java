@@ -1,7 +1,7 @@
 package com.formahead.formapi.model;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.Id; // primary key of the current entity
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.ElementCollection;
@@ -13,10 +13,10 @@ import java.util.UUID;
 
 
 @Entity // Required for JPA
-@Data // Lombok: Generates getters, setters, toString, etc.
+@Data
 public class FormResponse {
 
-    @Id // TODO primary key of the current entity
+    @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
