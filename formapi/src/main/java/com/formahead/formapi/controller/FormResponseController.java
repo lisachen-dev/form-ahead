@@ -8,7 +8,8 @@ import lombok.RequiredArgsConstructor;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/form-response")
+@RequestMapping("/api/form-responses")
+@RequiredArgsConstructor
 public class FormResponseController {
 
     private final FormResponseService formResponseService;
