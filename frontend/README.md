@@ -1,52 +1,26 @@
-# HangOut Planner — Frontend
+# Form Ahead – Frontend
 
-This is the React frontend for the HangOut Planner app. It allows users to submit availability and preferences for coordinating group hangouts.
+This is the **React-based frontend** for the Form Ahead RSVP planner.
 
-## 🛠️ Tech Stack
+Users can enter form responses including:
+- Full name
+- Phone number
+- Email
+- Guest count
+- Allergies
+- Payment method
+- Available dates
+- Additional notes
 
-- [Vite](https://vitejs.dev/) – Fast frontend tooling
-- [React](https://react.dev/) – UI framework
-- [Tailwind CSS](https://tailwindcss.com/docs/installation/using-vite) – Utility-first CSS for styling
-- (Planned) Axios or Fetch – for backend API integration
+## Status
+- Dynamic form rendering based on a question config array ✅
+- Component structure for multiple input types ✅
+- Styling and responsive layout post backend completion 🛠
+- Integration with backend API (submission, validation) in progress 🛠
 
-## ✨ Features
+## Technologies
+- React (Vite)
+- Tailwind CSS
 
-- Simple form with the following fields:
-    - Name
-    - Guest count (0–5)
-    - Food allergies
-    - Payment preference
-    - Available dates (checkboxes)
-    - Notes
+> 🚧 Styling and backend connection are still under active development.
 
-- `useState` for form state management
-- (Planned) Form validation
-- (Planned) POST request to backend
-
-## 🧪 Local Dev Setup
-
-```bash
-# Install dependencies
-npm install
-
-# Start the dev server
-npm run dev
-```
-
-## 📁 File Structure
-
-```
-/frontend
-├── public/
-├── src/
-│   ├── App.jsx
-│   ├── main.jsx
-│   └── components/
-└── tailwind.config.js
-```
-
-## 🔮 Future Enhancements
-
-- Replace mock API with real Spring Boot backend
-- Add form validation and feedback
-- Improve styling with animations or custom components

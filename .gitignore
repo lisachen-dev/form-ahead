@@ -8,9 +8,12 @@
 .env
 .env.local
 
-# IDEs
-.idea*
+# IntelliJ IDEA
+.idea/
 *.iml
+
+# VS Code
+.vscode/
 
 # Logs
 *.log
