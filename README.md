@@ -1,5 +1,8 @@
 # Form Ahead 📝
 
+## Project Paused until 8/15/25 
+* Lisa was accepted into a 6 week program hosted by Danny Thompson (hosts Commit Your Code Conference and Directory of Technology at ThisDotLabs)
+
 ![Status](https://img.shields.io/badge/status-under--construction-yellow)
 ![Java](https://img.shields.io/badge/backend-Java%2017-blue)
 ![Spring Boot](https://img.shields.io/badge/framework-Spring%20Boot-green)
